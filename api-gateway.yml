@@ -16,7 +16,13 @@ spring:
             predicates:
               - Path=/tasks/**
             filters:
-              - PrefixPath=/api/v1    
+              - PrefixPath=/api/v1
+          - id: task-detail-service
+            uri: http://localhost:8082
+            predicates:
+              - Path=/task-details/**
+            filters:
+              - PrefixPath=/api/v1 
 server:
   port: 8080
 
