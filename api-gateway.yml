@@ -8,7 +8,9 @@ spring:
           - id: user-service
             uri: lb://user-service
             predicates:
-              - Path=/api/v1/users/**
+              - Path=/users/**
+            filters:
+              - PrefixPath=/api/v1
 server:
   port: 8080
 
